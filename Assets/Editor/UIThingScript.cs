@@ -9,9 +9,8 @@ public class UIThingScript : EditorWindow
     [MenuItem("Tools/UIThing")]
     public static void ShowUIThing()
     {
-        // This method is called when the user selects the menu item in the Editor
-        EditorWindow wnd = GetWindow<UIThingScript>();
-        wnd.titleContent = new GUIContent("UIThing");
+        EditorWindow Window = GetWindow<UIThingScript>();
+        Window.titleContent = new GUIContent("UIThing");
         //
         //
         //
