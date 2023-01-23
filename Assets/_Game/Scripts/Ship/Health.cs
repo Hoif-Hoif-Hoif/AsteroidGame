@@ -4,7 +4,7 @@ namespace Ship
 {
     public class Health : MonoBehaviour
     {
-        private int _health = 10;
+        public int _health = 10;
         
         private const int MIN_HEALTH = 0;
         

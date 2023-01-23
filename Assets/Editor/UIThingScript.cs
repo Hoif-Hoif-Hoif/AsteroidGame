@@ -3,8 +3,9 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEditor.UIElements;
 
-public class UIThingScript : EditorWindow
+public class UIThingScript : UnityEditor.Editor
 {
     [MenuItem("Tools/UIThing")]
     public static void ShowUIThing()
@@ -19,12 +20,22 @@ public class UIThingScript : EditorWindow
 
     public void CreateGUI()
     {
+        var maxHealth = new IntegerField("Max Health");
+        //var Source_MaxHealth = GameObject.FindObjectOfType<Health>();
+        //
         rootVisualElement.Add(new Label("Howdy there!"));
-        rootVisualElement.Add(new TextField("Asteroid Damage: "));
-        rootVisualElement.Add(new TextField("Asteroid Speed: "));
+        rootVisualElement.Add(maxHealth);
+        maxHealth.bindingPath = "_health";
+        //
+        rootVisualElement.Add(new FloatField("Asteroid Speed: "));
         //
         var AsteroidDamage = AssetDatabase.FindAssets("Health");
+        //myIntField.Bind(serializedObject);
+        //myIntField.bindingPath = "m_Health";
         Debug.Log(AsteroidDamage);
+        //var inspector = new InspectorElement(Source_MaxHealth);
+        //rootVisualElement.Add(inspector);
     }
+
 
 }
