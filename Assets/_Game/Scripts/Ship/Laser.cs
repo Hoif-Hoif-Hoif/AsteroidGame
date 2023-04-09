@@ -13,7 +13,7 @@ namespace Ship
         private LaserRuntimeSet _lasers;
 
         [Header("Values:")]
-        [SerializeField] private float _speed = 0.2f;
+        [SerializeField] public float _speed = 0.2f;
 
         private Rigidbody2D _rigidbody;
 
